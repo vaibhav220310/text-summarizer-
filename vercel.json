@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "server.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "style.css", "use": "@vercel/static" },
+    { "src": "script.js", "use": "@vercel/static" }
+  ],
+  "rewrites": [
+    { "source": "/extract-pdf", "destination": "/server.js" },
+    { "source": "/summarize", "destination": "/server.js" },
+    { "source": "/elaborate", "destination": "/server.js" },
+    { "source": "/refine", "destination": "/server.js" },
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
+}
